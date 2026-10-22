@@ -1,0 +1,17 @@
+name: AURA Integration Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run integration test
+        run: |
+          echo "Testing AURA incident detection..."
+          python3 -c "assert 2 + 2 == 5, 'Intentional test failure for AURA'"
